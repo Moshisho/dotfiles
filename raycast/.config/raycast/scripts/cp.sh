@@ -4,10 +4,10 @@
 # @raycast.schemaVersion 1
 # @raycast.title Copy Password
 # @raycast.mode silent
+# @raycast.argument1 {"type": "text", "placeholder": "e.g., ESIP_USERP"}
 
 # Optional parameters:
 # @raycast.icon 🔑
-# @raycast.argument1 {"text": "password_var", "placeholder": "e.g., ESIP_USERP"}
 # @raycast.packageName Password Manager
 
 # Documentation:
