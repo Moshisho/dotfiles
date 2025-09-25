@@ -6,6 +6,52 @@ return {
 		local lint = require("lint")
 		local golint = require("lint").linters.golangcilint
 
+		-- Add custom Biome linter
+		lint.linters.biome = {
+			cmd = "biome",
+			stdin = true,
+			args = {
+				"lint",
+				"--reporter=json",
+				"--stdin-file-path",
+				function()
+					return vim.api.nvim_buf_get_name(0)
+				end,
+			},
+			stream = "stdout",
+			ignore_exitcode = true,
+			parser = function(output, bufnr)
+				if output == "" then
+					return {}
+				end
+				
+				local ok, decoded = pcall(vim.json.decode, output)
+				if not ok or not decoded or not decoded.diagnostics then
+					return {}
+				end
+				
+				local diagnostics = {}
+				for _, diagnostic in ipairs(decoded.diagnostics) do
+					if diagnostic.location and diagnostic.location.span then
+						local span = diagnostic.location.span
+						table.insert(diagnostics, {
+							lnum = span.start.line - 1, -- Convert to 0-based
+							col = span.start.column,
+							end_lnum = span["end"].line - 1,
+							end_col = span["end"].column,
+							severity = diagnostic.severity == "error" and vim.diagnostic.severity.ERROR 
+								or diagnostic.severity == "warning" and vim.diagnostic.severity.WARN
+								or vim.diagnostic.severity.INFO,
+							message = diagnostic.description,
+							code = diagnostic.category,
+							source = "biome",
+						})
+					end
+				end
+				return diagnostics
+			end,
+		}
+
 		golint.args = {
 			"run",
 			"--output.json.path=stdout",
@@ -17,10 +63,10 @@ return {
 		}
 
 		lint.linters_by_ft = {
-			javascript = { "eslint_d" },
-			typescript = { "eslint_d" },
-			javascriptreact = { "eslint_d" },
-			typescriptreact = { "eslint_d" },
+			javascript = { "biome" },
+			typescript = { "biome" },
+			javascriptreact = { "biome" },
+			typescriptreact = { "biome" },
 			svelte = { "eslint_d" },
 			python = { "pylint" },
 			terraform = { "terraform_validate" },
