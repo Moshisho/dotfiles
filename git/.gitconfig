@@ -3,3 +3,5 @@
 # Please adapt and uncomment the following lines:
 	name = Moshe Azaria
 	email = moshe.azaria@sage.com
+[pull]
+	rebase = false
