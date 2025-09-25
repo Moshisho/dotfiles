@@ -4,11 +4,25 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 
+# Add custom AWS module inline after directory
+format = '$directory$custom$all$character'
+
 # Simple > cursor like Claude
 [character]
-success_symbol = '[ >](bold green)'
-error_symbol = '[ >](bold red)'
+success_symbol = '[ ➜](bold green)'
+error_symbol = '[ ➜](bold red)'
 
 # Disable the package module, hiding it from the prompt completely
 #[package]
 #disabled = true
+
+# Disable AWS module by default - it shows everywhere otherwise
+[aws]
+disabled = true
+
+# Custom AWS region display for specific directories
+[custom.aws_region]
+command = 'echo "us-east-2"'
+when = '''case "$PWD" in "$HOME/.aws"|"$HOME/dev/Work/xpnaops"*) true;; *) false;; esac'''
+format = '☁️($output) '
+style = 'bold yellow'
