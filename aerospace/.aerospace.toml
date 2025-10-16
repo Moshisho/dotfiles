@@ -137,7 +137,7 @@ automatically-unhide-macos-hidden-apps = false
     alt-s = ['workspace S', 'exec-and-forget open -a "Slack"']
     alt-t = ['workspace T', 'exec-and-forget open -a "Microsoft Teams"']
     alt-u = 'workspace U'
-    alt-v = 'workspace V'
+    alt-v = ['workspace V', 'exec-and-forget open -a "Visual Studio Code"']
     alt-w = 'workspace W'
     alt-x = 'workspace X'
     alt-y = 'workspace Y'
@@ -223,6 +223,10 @@ run = 'move-node-to-workspace O'
 [[on-window-detected]]
 if.app-id = 'org.chromium.Chromium'
 run = 'move-node-to-workspace P'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace V'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
