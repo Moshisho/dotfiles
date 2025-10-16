@@ -1,0 +1,95 @@
+{
+	"workbench.iconTheme": "vs-seti",
+	"editor.tabSize": 2,
+	"editor.hover.delay": 1500,
+	"editor.cursorSurroundingLines": 10,
+	"vim.leader": "<space>",
+	"vim.highlightedyank.enable": true,
+	"vim.highlightedyank.duration": 300,
+	"vim.autoSwitchInputMethod.enable": false,
+	"vim.overrideCopy": false,
+	"git.autofetch": true,
+	"search.exclude": {
+		"**/*.bdg": true
+	},
+	"workbench.statusBar.visible": true,
+	"editor.minimap.enabled": false,
+	"prettier.configPath": ".prettierrc.json",
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"explorer.confirmDragAndDrop": false,
+	"editor.formatOnSave": true,
+	"files.exclude": {
+		"**/.classpath": true,
+		"**/.project": true,
+		"**/.settings": true,
+		"**/.factorypath": true
+	},
+	"editor.suggestSelection": "first",
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	},
+	"redhat.telemetry.enabled": false,
+	"git.confirmSync": false,
+	"git.inputValidationLength": 80,
+	"git.ignoreRebaseWarning": true,
+	"[python]": {
+		"editor.formatOnType": true
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"diffEditor.ignoreTrimWhitespace": false,
+	"[dockerfile]": {
+		"editor.defaultFormatter": "ms-azuretools.vscode-containers"
+	},
+	"update.showReleaseNotes": false,
+	"nxConsole.showNodeVersionOnStartup": false,
+	"eslint.ignoreUntitled": true,
+	"eslint.run": "onSave",
+	"eslint.validate": [],
+	"prettier.useEditorConfig": false,
+	"prettier.requireConfig": true,
+	"workbench.colorTheme": "Visual Studio Dark",
+	"playwright.reuseBrowser": false,
+	"playwright.showTrace": false,
+	"application.shellEnvironmentResolutionTimeout": 15,
+	"editor.defaultFormatter": "biomejs.biome",
+	"files.associations": {
+		"*.tpl": "smarty"
+	},
+	"[smarty]": {
+		"editor.defaultFormatter": "aswinkumar863.smarty-template-support"
+	},
+	"[yaml]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"yaml.schemas": {
+		"https://www.artillery.io/schema.json": [
+			"**/artillery*.yml"
+		],
+		"file:///Users/moshe.azaria/.vscode/extensions/atlassian.atlascode-4.0.4/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+	},
+	"eslint.format.enable": true,
+	"eslint.enable": false,
+	"atlascode.bitbucket.enabled": false,
+	"github.copilot.nextEditSuggestions.enabled": true,
+	"[dockercompose]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"editor.autoIndent": "advanced",
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": false,
+			"strings": true
+		},
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	},
+	"[github-actions-workflow]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	}
+}
