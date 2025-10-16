@@ -51,13 +51,13 @@ return {
 			end, opts)
 
 			opts.desc = "Line diagnostics"
-			keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+			keymap.set("n", "<leader>dd", vim.diagnostic.open_float, opts)
 
 			opts.desc = "Prev diagnostic"
-			keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+			keymap.set("n", "<leader>d[", vim.diagnostic.goto_prev, opts)
 
 			opts.desc = "Next diagnostic"
-			keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+			keymap.set("n", "<leader>d]", vim.diagnostic.goto_next, opts)
 
 			opts.desc = "Restart LSP"
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)

@@ -158,5 +158,25 @@ return {
 			desc = "LazyGit log",
 			silent = true,
 		},
+		{
+			"<leader>gP",
+			"<cmd>!git push<CR>",
+			desc = "Git push",
+		},
+		{
+			"<leader>g<space>",
+			"<cmd>!git add .<CR>",
+			desc = "Git stage all",
+		},
+		{
+			"<leader>gc",
+			"<cmd>!git commit<CR>",
+			desc = "Git commit",
+		},
+		{
+			"<leader>gp",
+			"<cmd>!git pull<CR>",
+			desc = "Git pull",
+		},
 	},
 }
